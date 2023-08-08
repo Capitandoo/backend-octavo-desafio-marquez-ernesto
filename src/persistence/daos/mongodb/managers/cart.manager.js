@@ -14,6 +14,7 @@ export default class CartManager extends MongoDao{
       return response;
     } catch (error) {
       console.log(error);
+      throw new Error (error.message);
     }
   }
 
@@ -23,6 +24,7 @@ export default class CartManager extends MongoDao{
       return result;
     } catch (error) {
       console.log(error);
+      throw new Error (error.message);
     }
   }
 
@@ -32,6 +34,7 @@ export default class CartManager extends MongoDao{
       return response.populate("products.product");
     } catch (error) {
       console.log(error);
+      throw new Error (error.message);
     }
   }
 
@@ -55,6 +58,7 @@ export default class CartManager extends MongoDao{
         success: `El producto a sido agregado al carrito`, payload: result};
     } catch (error) {
       console.log(error);
+      throw new Error (error.message);
     }
   }
 
@@ -67,6 +71,7 @@ export default class CartManager extends MongoDao{
       return { success: `El producto a sido borrado`, payload: result };
     } catch (error) {
       console.log(error);
+      throw new Error (error.message);
     }
   }
 
@@ -76,6 +81,7 @@ export default class CartManager extends MongoDao{
       return { success: `La lista de productos a sido borrada`, payload: result };
     } catch (error) {
       console.log(error);
+      throw new Error (error.message);
     }
   }
 
@@ -89,6 +95,7 @@ export default class CartManager extends MongoDao{
       return { success: `El producto a sido actualizado`, payload: result };
     } catch (error) {
       console.log(error);
+      throw new Error (error.message);
     }
   }
 
@@ -100,7 +107,7 @@ export default class CartManager extends MongoDao{
       );
       return { success: `La cantidad del producto a sido actualizada`, payload: result };
     } catch (error) {
-      return { error: error.message };
+      throw new Error (error.message);
     }
   }
 

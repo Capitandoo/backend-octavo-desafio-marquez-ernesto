@@ -21,7 +21,7 @@ export default class CartController extends Controllers {
       const cart = await cartService.getCart (cid);
       res.json(cart);
     } catch (error) {
-      next(error);
+      next(error.message);
     }
   };
   
@@ -30,7 +30,7 @@ export default class CartController extends Controllers {
       const newCart = await cartService.createCart ();
       res.json(newCart);
     } catch (error) {
-      next(error);
+      next(error.message);
     }
   };
   
@@ -42,7 +42,7 @@ export default class CartController extends Controllers {
       const prodAdded = await cartService.addProductInCart (cid, pid);
       res.json(prodAdded);
     } catch (error) {
-      next(error);
+      next(error.message);
     }
   };
   
@@ -53,7 +53,7 @@ export default class CartController extends Controllers {
       const prodDelete = await cartService.deleteProductInCart (cid, pid);
       res.json(prodDelete);
     } catch (error) {
-      next(error);
+      next(error.message);
     }
   };
   
@@ -63,7 +63,7 @@ export default class CartController extends Controllers {
       const cartDelete = await cartService.deleteCart (cid);
       res.json (cartDelete);
     } catch (error) {
-      next(error);
+      next(error.message);
     }
   ;}
   
@@ -75,7 +75,7 @@ export default class CartController extends Controllers {
       res.json (update);
     } catch (error) {
       console.log (error);
-      next(error);
+      next(error.message);
     }
   }
   
@@ -86,7 +86,7 @@ export default class CartController extends Controllers {
         const newQty = await cartService.updateProductInCart (cid, pid, quantity);
         res.json(newQty);
     } catch (error) {
-        next(error);
+      next(error.message);
     }
   }
   

@@ -12,7 +12,7 @@ export default class TicketManagerDB extends MongoDao {
       let result = await ticketModel.create(ticket);
       return result;
     } catch (error) {
-      return { error: error.message };
+      throw new Error (error.message);
     }
   }
 }

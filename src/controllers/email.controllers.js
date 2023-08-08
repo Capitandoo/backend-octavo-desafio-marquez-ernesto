@@ -24,6 +24,6 @@ export const sendGmail = async (nameEmail, ticketData) => {
     console.log("Email enviado!");
     return response;
   } catch (error) {
-    throw error;
+    throw new Error (error);
   }
 };

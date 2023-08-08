@@ -14,6 +14,7 @@ export default class ProductController extends Controllers {
       res.status(200).json({ products: response });
     } catch (error) {
       console.log(error);
+      next(error.message)
     }
   };
   

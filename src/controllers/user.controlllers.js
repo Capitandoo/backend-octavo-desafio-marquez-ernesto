@@ -14,7 +14,7 @@ export default class UserController extends Controllers {
       const token = await this.service.register (req.body);
       createResponse (res, 200, token);
     } catch (error) {
-      next(error);
+      next(error.message);
     }
   };  
   
@@ -23,7 +23,7 @@ export default class UserController extends Controllers {
       const user = await this.service.login (req.body);
       createResponse(res, 200, user);
     } catch (error) {
-      next(error);
+      next(error.message);
     }
   };
   
@@ -42,7 +42,7 @@ export default class UserController extends Controllers {
         },
       });
     } catch (error) {
-      next(error);
+      next(error.message);
     }
   };
 

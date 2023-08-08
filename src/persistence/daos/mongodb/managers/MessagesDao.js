@@ -8,6 +8,7 @@ export default class MessagesDao {
       return response;
     } catch (error) {
       console.log(error);
+      throw new Error (error.message);
     }
   }
 
@@ -17,6 +18,7 @@ export default class MessagesDao {
       return response;
     } catch (error) {
       console.log(error);
+      throw new Error (error.message);
     }
   }
 
@@ -26,6 +28,7 @@ export default class MessagesDao {
       return response;
     } catch (error) {
       console.log (error);
+      throw new Error (error.message);
     }
   }
 
@@ -35,6 +38,7 @@ export default class MessagesDao {
       return response;
     } catch (error) {
       console.log(error);
+      throw new Error (error.message);
     }
   }
 
@@ -44,6 +48,7 @@ export default class MessagesDao {
       return response;
     } catch (error) {
       console.log (error);
+      throw new Error (error.message);
     }
   }
 
@@ -51,7 +56,7 @@ export default class MessagesDao {
     try {
       const response = await msgModel.deleteMany ();
     } catch (error) {
-      
+      throw new Error (error.message);
     }
   }
 
