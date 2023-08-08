@@ -4,7 +4,7 @@ import { __dirname, pathMessages } from "./path.js";
 import { Server } from "socket.io";
 import handlebars from "express-handlebars";
 import { errorHandler } from "./middlewares/errorHandler.js";
-import { errorMiddleware } from "./middlewares/errors/index.js";
+import { errorMiddleware } from "./middlewares/errors/error.middleware.js";
 import session from "express-session";
 import MongoStore from "connect-mongo";
 import cookieParser from "cookie-parser";

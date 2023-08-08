@@ -33,16 +33,10 @@ export default class Controllers {
     try {
       const newItem = await this.service.create(req.body);
       if (!newItem)
-      throw CustomError.createError({
-        name: "TYPE_ERROR",
-        cause: generateProductErrorAttributes(body),
-        message: "Error trying to create the product.",
-        code: EErrors.INVALID_TYPE_ERROR
-      });
-        /*createResponse(res, 404, {
+        createResponse(res, 404, {
           method: "create",
           error: "Validation error",
-        });*/
+        });
       else createResponse(res, 200, newItem);
     } catch (error) {
       next(error.message);
