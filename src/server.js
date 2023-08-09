@@ -3,8 +3,7 @@ import cors from "cors";
 import { __dirname, pathMessages } from "./path.js";
 import { Server } from "socket.io";
 import handlebars from "express-handlebars";
-import { errorHandler } from "./middlewares/errorHandler.js";
-import { errorMiddleware } from "./middlewares/errors/error.middleware.js";
+import { errorHandler } from "./middlewares/errors/errorHandler.js";
 import session from "express-session";
 import MongoStore from "connect-mongo";
 import cookieParser from "cookie-parser";
@@ -60,7 +59,6 @@ app.set("view engine", "handlebars");
 app.set("views", __dirname + "/views");
 app.use("/", routerApi);
 app.use(errorHandler);
-app.use(errorMiddleware);
 
 /*socketServer.on("connection", (socket) => {
   console.log("Usuario conectado", socket.id);

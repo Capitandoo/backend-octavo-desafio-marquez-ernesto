@@ -1,4 +1,4 @@
-import { HttpResponse } from "./http.response";
+import { HttpResponse } from "../../utils/http.response.js";
 
 const httpResponse = new HttpResponse();
 
