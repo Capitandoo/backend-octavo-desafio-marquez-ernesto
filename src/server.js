@@ -11,7 +11,6 @@ import passport from "passport";
 import "./middlewares/passport/jwt.js";
 import "./middlewares/passport/local.js";
 import "./middlewares/passport/github.js";
-
 import routerApi from "./routes/index.js";
 //import ProductManager from "./daos/filesystem/ProductDao.js";
 //import ProductDao from "./daos/mongodb/ProductDao.js";

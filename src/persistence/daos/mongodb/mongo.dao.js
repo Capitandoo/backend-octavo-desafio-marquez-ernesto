@@ -5,13 +5,14 @@ export default class MongoDao {
   }
 
   async getAll() {
-    try {
+    /*try {
       const response = await this.model.find({});
       return response;
     } catch (error) {
       console.log(error);
       throw new Error (error.message);
-    }
+    }*/
+    throw new Error (error.message);
   }
 
   async getById(id) {
